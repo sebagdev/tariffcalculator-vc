@@ -1,0 +1,13 @@
+services:
+  tariff-calculator:
+    build: .
+    image: tariffcalculator-vc:local
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../docs:/app/docs:ro
+    command:
+      - --addr
+      - 0.0.0.0:8080
+      - --data
+      - /app/docs
